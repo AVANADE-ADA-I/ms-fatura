@@ -30,7 +30,7 @@ public class Compra {
         this.dataCompra = dto.dataCompra();
         this.loja = dto.loja();
         this.valor = dto.valor();
-        this.statusCompra = StatusCompra.FINALIZADA;
+        this.statusCompra = dto.statusCompra();
         this.usuario = usuario;
     }
     public CompraResponseDTO dto() {
