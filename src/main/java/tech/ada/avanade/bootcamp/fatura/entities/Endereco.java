@@ -22,7 +22,7 @@ public class Endereco {
         this.rua = dto.rua();
         this.bairro = dto.bairro();
         this.cidade = dto.cidade();
-        this.uf = dto.uf();
+        this.uf = dto.estado();
         this.numero = dto.numero();
         if (dto.complemento() != null) {
             this.complemento = dto.complemento();
@@ -42,8 +42,8 @@ public class Endereco {
         if (dto.cidade() != null) {
             this.cidade = dto.cidade();
         }
-        if (dto.uf() != null) {
-            this.uf = dto.uf();
+        if (dto.estado() != null) {
+            this.uf = dto.estado();
         }
         if (dto.numero() != null) {
             this.numero = dto.numero();

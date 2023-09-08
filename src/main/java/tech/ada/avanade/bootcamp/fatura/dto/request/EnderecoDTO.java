@@ -14,7 +14,7 @@ public record EnderecoDTO(
         @NotBlank
         String cidade,
         @NotBlank
-        String uf,
+        String estado,
         String complemento,
         @NotBlank
         String numero

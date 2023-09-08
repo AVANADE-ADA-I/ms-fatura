@@ -21,7 +21,7 @@ public class Usuario {
     private Boolean ativo;
 
     public Usuario(UsuarioRequestDTO dto) {
-        this.nome = dto.nome();
+        this.nome = dto.nomeTitularCartao();
         this.numeroCartao = dto.numeroCartao();
         this.diaVencimento = dto.diaVencimento();
         this.ativo = true;
@@ -33,8 +33,8 @@ public class Usuario {
     }
 
     public void editar(UsuarioRequestDTO dto) {
-        if (dto.nome() != null) {
-            this.nome = dto.nome();
+        if (dto.nomeTitularCartao() != null) {
+            this.nome = dto.nomeTitularCartao();
         }
         if (dto.endereco() != null) {
             this.endereco.editar(dto.endereco());
