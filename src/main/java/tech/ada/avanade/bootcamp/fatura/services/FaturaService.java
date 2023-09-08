@@ -32,6 +32,13 @@ public class FaturaService {
             return this.criarFatura(usuario, dataVencimento);
         }
         List<CompraResponseDTO> compras = this.pegarCompras(usuario, dataVencimento);
+        BigDecimal totalCompras = compras.stream()
+                .map(CompraResponseDTO::valor)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+        BigDecimal valor = totalCompras.add(this.balancoFaturaAnterior(usuario, dataVencimento));
+
+        faturaOptional.get().setValor(valor);
+        faturaRepository.save(faturaOptional.get());
         return faturaOptional.get().dto(compras);
     }
 
