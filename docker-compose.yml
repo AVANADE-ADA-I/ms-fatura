@@ -9,7 +9,7 @@ services:
       POSTGRES_USER: fatura
       POSTGRES_DB: fatura
     ports:
-      - "5433:5432"
+      - "5436:5432"
 
 volumes:
   db-data:
